@@ -89,25 +89,3 @@ const shadowBoxes = [
     'box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;',
     'box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;'
 ];
-
-function popShadowBoxes() {
-    var header = document.querySelector('#section-header');
-    var container = document.querySelector('#main-container');
-    container.innerHTML = ''
-    header.textContent = 'Box Shadows';
-    shadowBoxes.forEach(function (style) {
-        var box = document.createElement('div');
-        box.classList.add('shadow-box');
-        box.setAttribute('style', style)
-        var text = document.createElement('span')
-        text.textContent = "Copy CSS";
-        var icon = document.createElement('div');
-        icon.setAttribute('class', 'copyIcon');
-        box.appendChild(text);
-        box.appendChild(icon);
-        // box.setAttribute('data-style', style)
-        container.appendChild(box);
-
-    })
-
-}

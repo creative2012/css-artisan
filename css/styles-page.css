@@ -5,7 +5,7 @@ body{
 
 }
 ul .active{
-    border-bottom: 3px solid rgb(212, 174, 247);
+    border-bottom: 3px solid #3264f86b;
 }
 nav{
     position: relative;
@@ -35,7 +35,7 @@ nav ul li{
     -o-transition: border-bottom 0.5s ease;
 }
 nav ul li:hover{
-    border-bottom: 3px solid blueviolet;
+    border-bottom: 3px solid #3265f8;
 
 }
 
@@ -44,7 +44,7 @@ nav ul li:hover{
     align-items: center;
     font-weight: bold;
     font-size: 20px;
-    color:blueviolet;
+    color:rgb(46, 110, 230);
     transition: transform 0.5s ease;
     -webkit-transition: transform 0.5s ease;
     -moz-transition: transform 0.5s ease;
@@ -53,11 +53,12 @@ nav ul li:hover{
     cursor: pointer;
 }
 #artisan{
-    background-image: url(../images/artisan.png);
+    background-image: url(../images/cssLogo.png);
     background-position: center;
     background-size: contain;
-    height: 40px;
-    width: 40px;
+    background-repeat: no-repeat;
+    height: 50px;
+    width: 50px;
     margin-right: 10px;
 }
 #nav-left,
@@ -94,13 +95,13 @@ main{
 }
   
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(transparent, blueviolet);
+    background: linear-gradient(transparent, #3265f8);
     border-radius: 6px;
 
 }
   
 ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(transparent, rgb(212, 174, 247));
+    background: linear-gradient(transparent, #3264f86b);
 }
 @media (min-width: 485px) {}
 @media (max-width: 773px) {
@@ -112,11 +113,12 @@ main{
         justify-content: center;
     }
     nav ul li{
-        padding-bottom: 16px;
+        padding-bottom: 17px;
         padding-top: 0px;
     }
     nav ul{
         padding-left: 0;
+        margin-top: 5px;
         gap: 15px;
     }
     main{

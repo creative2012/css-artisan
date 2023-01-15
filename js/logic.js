@@ -29,6 +29,7 @@ function popShadowBoxes() {
     });
 
 }
+//just for testing
 function popGeneric(headerText) {
     var header = document.querySelector('#section-header');
     var container = document.querySelector('#main-container');
@@ -37,32 +38,7 @@ function popGeneric(headerText) {
 
 
 }
-
-// function fetchPage(page){
-
-//   fetch(page)
-//     .then(function(response) {
-//         // When the page is loaded convert it to text
-//         return response.text()
-//     })
-//     .then(function(html) {
-//         // Initialize the DOM parser
-//         var parser = new DOMParser();
-//         // Parse the text
-//         var doc = parser.parseFromString(html, "text/html");
-//         //get the body
-//         var header =  doc.querySelector('body');
-//         //get inner html from body and add to page container
-//         pageContainer.innerHTML = header.innerHTML;
-//         popShadowBoxes();
-
-//     })
-//     //log any errors
-//     .catch(function(err) {  
-//         console.log('Failed to fetch page: ', err);  
-//     });
-
-// }
+//Function to copy to clipboard
 function copyToClip(button) {
     // Get the text field
     var copyText = button.getAttribute('style', 'box-shadow');
@@ -71,10 +47,10 @@ function copyToClip(button) {
     navigator.clipboard.writeText(copyText);
 
     // Alert the copied text
-    alert(button);
+    boxAlert(button);
 }
 //function to alert copyed to clip
-function alert(button) {
+function boxAlert(button) {
     button.firstChild.textContent = "Copyed to clip!";
     timeoutID = setTimeout(function () {
         button.firstChild.textContent = "Copy CSS";
@@ -83,9 +59,11 @@ function alert(button) {
 }
 
 //function to control active nav itom
-function navController(button) {
+function navController(button, change = true) {
+    if(change) button.style.color = 'black' ;
     var inactive = document.querySelector('.active');
     inactive.classList.remove('active');
+    if(inactive.id != 'nav-title') inactive.style.color = 'lightslategrey';
     button.classList.add('active');
 
 }
@@ -93,7 +71,7 @@ function navController(button) {
 //function to handle button clicks
 function buttonHandler(button) {
     if (button.id == 'nav-title') {
-        navController(button);
+        navController(button, false);
         popGeneric('Home')
 
     }

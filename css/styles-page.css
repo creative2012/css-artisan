@@ -2,7 +2,11 @@ body {
     margin: 0;
     overflow: hidden;
     font-family: 'Poppins', sans-serif;
+  
+}
 
+.home{
+    height: calc(100vh - 230px)!important;
 }
 
 ul .active {
@@ -98,6 +102,10 @@ main {
     padding: 0 20px;
     gap: 100px;
     padding-bottom: 40px;
+ 
+}
+#section-header{
+   
 }
 
 ::-webkit-scrollbar {
@@ -119,14 +127,16 @@ footer{
     align-items: center;
     justify-content: center;
     height:70px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     color: white;
     background-color: #3265f8;
 
 }
 @media (min-width: 485px) {}
 
-@media (max-width: 773px) {
+@media (max-width: 700px) {
+    .home{
+        height: calc(100vh - 260px)!important;
+    }
     #nav-left {
         flex-direction: column;
     }
@@ -156,4 +166,8 @@ footer{
 
 @media (min-width: 1024px) {}
 
-@media (min-width: 1220px) {}
+@media (min-width: 1630px) {
+    #main-container {
+        padding: 0 100px;
+    }
+}

@@ -1,10 +1,23 @@
 const pageContainer = document.querySelector('main');
 var timeoutID = null;
 
+//function to show homepage
+function popHomepage(headerText) {
+    var header = document.querySelector('#section-header');
+    var container = document.querySelector('#main-container');
+    container.style.setProperty('height', '0px');
+    container.innerHTML = '<em>Helping you to do more...</em>';
+    header.innerHTML = '#cssArtisan {<br/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspWelcome: "Hello";<br/>}';
+    header.setAttribute('class', 'home');
+    
+
+}
 function popShadowBoxes() {
     var header = document.querySelector('#section-header');
     var container = document.querySelector('#main-container');
     container.innerHTML = '';
+    header.removeAttribute('class','home');
+    container.style.removeProperty('height');
     header.textContent = 'Box Shadows';
     var i = 1;
     shadowBoxes.forEach(function (style) {
@@ -72,7 +85,7 @@ function navController(button, change = true) {
 function buttonHandler(button) {
     if (button.id == 'nav-title') {
         navController(button, false);
-        popGeneric('Home')
+        popHomepage('home');
 
     }
     if (button.id == 'boxShadowLink') {
@@ -90,11 +103,6 @@ function buttonHandler(button) {
         popGeneric('Buttons')
 
     }
-    if (button.id == 'fontsLink') {
-        navController(button);
-        popGeneric('Fonts')
-
-    }
     if (button.id == 'scrollLink') {
         navController(button);
         popGeneric('Scroll bars')
@@ -107,6 +115,7 @@ function buttonHandler(button) {
         copyToClip(button.parentElement);
     }
 }
+popHomepage('home');
 //page click listener
 const navContainer = document.querySelector('body');
 navContainer.addEventListener('click', function (e) {

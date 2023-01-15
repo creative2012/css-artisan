@@ -66,3 +66,9 @@
 
     }
 }
+@media (min-width: 1630px) {
+    .shadow-box {
+        height: 200px;
+        width: 200px;
+    }
+}

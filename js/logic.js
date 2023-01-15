@@ -9,23 +9,24 @@ function popShadowBoxes() {
     var i = 1;
     shadowBoxes.forEach(function (style) {
         var box = document.createElement('div');
+        var text = document.createElement('span')
+        var icon = document.createElement('div');
+        var number = document.createElement('div');
+
         box.classList.add('shadow-box');
         box.setAttribute('style', style)
-        var text = document.createElement('span')
         text.textContent = "Copy CSS";
-        var icon = document.createElement('div');
         icon.setAttribute('class', 'copyIcon');
-        var number = document.createElement('div');
         number.setAttribute('class', 'shadowBoxNo');
         number.textContent = i
+
         box.appendChild(text);
         box.appendChild(number);
         box.appendChild(icon);
-        // box.setAttribute('data-style', style)
         container.appendChild(box);
         i++;
 
-    })
+    });
 
 }
 function popGeneric(headerText) {

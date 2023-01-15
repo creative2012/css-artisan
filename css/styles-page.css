@@ -2,8 +2,13 @@ body{
     margin: 0;
     overflow: hidden;
     font-family: 'Poppins', sans-serif;
+
+}
+ul .active{
+    border-bottom: 3px solid rgb(212, 174, 247);
 }
 nav{
+    position: relative;
     background-color: white;
     display:flex;
     justify-content: space-between;
@@ -39,6 +44,13 @@ nav ul li:hover{
     align-items: center;
     font-weight: bold;
     font-size: 20px;
+    color:blueviolet;
+    transition: transform 0.5s ease;
+    -webkit-transition: transform 0.5s ease;
+    -moz-transition: transform 0.5s ease;
+    -ms-transition: transform 0.5s ease;
+    -o-transition: transform 0.5s ease;
+    cursor: pointer;
 }
 #artisan{
     background-image: url(../images/artisan.png);
@@ -54,18 +66,8 @@ nav ul li:hover{
     align-items: center;
     justify-content: space-between;
 }
-#nav-left a{
-    height: 100%;
-    display: flex;
-    text-decoration: none;
-    color:blueviolet;
-    transition: transform 0.5s ease;
-    -webkit-transition: transform 0.5s ease;
-    -moz-transition: transform 0.5s ease;
-    -ms-transition: transform 0.5s ease;
-    -o-transition: transform 0.5s ease;
-}
-#nav-left a:hover{
+
+#nav-title:hover{
     transform: scale(1.1);
     -webkit-transform: scale(1.1);
     -moz-transform: scale(1.1);
@@ -83,10 +85,25 @@ main{
     flex-wrap: wrap ;
     justify-content: center;
     padding: 0 20px;
-    gap: 80px;
+    gap: 100px;
     padding-bottom: 40px;
 }
-@media (max-width: 652px) {
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+  
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(transparent, blueviolet);
+    border-radius: 6px;
+
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(transparent, rgb(212, 174, 247));
+}
+@media (min-width: 485px) {}
+@media (max-width: 773px) {
     #nav-left{
         flex-direction: column;
     }

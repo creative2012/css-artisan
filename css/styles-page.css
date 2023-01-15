@@ -1,16 +1,18 @@
-body{
+body {
     margin: 0;
     overflow: hidden;
     font-family: 'Poppins', sans-serif;
 
 }
-ul .active{
+
+ul .active {
     border-bottom: 3px solid #3264f86b;
 }
-nav{
+
+nav {
     position: relative;
     background-color: white;
-    display:flex;
+    display: flex;
     justify-content: space-between;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     padding: 10px 20px;
@@ -18,13 +20,15 @@ nav{
     height: 60px;
     white-space: nowrap
 }
-nav ul{
-    display:flex;
+
+nav ul {
+    display: flex;
     list-style: none;
     gap: 30px;
     cursor: pointer;
 }
-nav ul li{
+
+nav ul li {
     border-bottom: 3px solid transparent;
     padding-bottom: 24px;
     padding-top: 30px;
@@ -34,17 +38,18 @@ nav ul li{
     -ms-transition: border-bottom 0.5s ease;
     -o-transition: border-bottom 0.5s ease;
 }
-nav ul li:hover{
+
+nav ul li:hover {
     border-bottom: 3px solid #3265f8;
 
 }
 
-#nav-title{
-    display:flex;
+#nav-title {
+    display: flex;
     align-items: center;
     font-weight: bold;
     font-size: 20px;
-    color:rgb(46, 110, 230);
+    color: rgb(46, 110, 230);
     transition: transform 0.5s ease;
     -webkit-transition: transform 0.5s ease;
     -moz-transition: transform 0.5s ease;
@@ -52,7 +57,8 @@ nav ul li:hover{
     -o-transition: transform 0.5s ease;
     cursor: pointer;
 }
-#artisan{
+
+#artisan {
     background-image: url(../images/cssLogo.png);
     background-position: center;
     background-size: contain;
@@ -61,29 +67,32 @@ nav ul li:hover{
     width: 50px;
     margin-right: 10px;
 }
+
 #nav-left,
-#nav-right{
+#nav-right {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-#nav-title:hover{
+#nav-title:hover {
     transform: scale(1.1);
     -webkit-transform: scale(1.1);
     -moz-transform: scale(1.1);
     -ms-transform: scale(1.1);
     -o-transform: scale(1.1);
 }
-main{
+
+main {
     width: 100vw;
     height: calc(100vh - 80px);
-    overflow-x:hidden;
-    overflow-y:auto;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
-#main-container{
+
+#main-container {
     display: flex;
-    flex-wrap: wrap ;
+    flex-wrap: wrap;
     justify-content: center;
     padding: 0 20px;
     gap: 100px;
@@ -93,35 +102,41 @@ main{
 ::-webkit-scrollbar {
     width: 12px;
 }
-  
+
 ::-webkit-scrollbar-thumb {
     background: linear-gradient(transparent, #3265f8);
     border-radius: 6px;
 
 }
-  
+
 ::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(transparent, #3264f86b);
 }
+
 @media (min-width: 485px) {}
+
 @media (max-width: 773px) {
-    #nav-left{
+    #nav-left {
         flex-direction: column;
     }
-    nav{
+
+    nav {
         height: 90px;
         justify-content: center;
     }
-    nav ul li{
+
+    nav ul li {
         padding-bottom: 17px;
         padding-top: 0px;
     }
-    nav ul{
+
+    nav ul {
         padding-left: 0;
         margin-top: 5px;
         gap: 15px;
     }
-    main{
+
+    main {
         height: calc(100vh - 110px);
     }
 }

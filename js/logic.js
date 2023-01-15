@@ -6,7 +6,7 @@ function popShadowBoxes() {
     var container = document.querySelector('#main-container');
     container.innerHTML = '';
     header.textContent = 'Box Shadows';
-    var i = 1
+    var i = 1;
     shadowBoxes.forEach(function (style) {
         var box = document.createElement('div');
         box.classList.add('shadow-box');

@@ -1,4 +1,4 @@
-.shadow-box{
+.shadow-box {
     position: relative;
     display: flex;
     align-items: center;
@@ -12,27 +12,30 @@
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
     transition: all 0.5s ease;
-    -webkit-transition:all 0.5s ease;
-    -moz-transition:all 0.5s ease;
-    -ms-transition:all 0.5s ease;
-    -o-transition:all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
     cursor: pointer;
     background-color: white;
 }
-.shadow-box:hover{
+
+.shadow-box:hover {
     font-size: 12px;
 
 }
-.shadowBoxNo{
-    position:absolute;
+
+.shadowBoxNo {
+    position: absolute;
     top: 10px;
     left: 10px;
     font-size: 15px;
     color: lightslategrey;
 
 }
-.copyIcon{
-    position:absolute;
+
+.copyIcon {
+    position: absolute;
     top: 10px;
     right: 10px;
     height: 20px;
@@ -41,7 +44,8 @@
     background-position: center;
     background-size: contain;
 }
-#section-header{
+
+#section-header {
     height: 50px;
     display: flex;
     align-items: center;
@@ -52,11 +56,12 @@
 }
 
 @media (max-width: 652px) {
-    .shadow-box{
+    .shadow-box {
         height: 140px;
         width: 140px;
     }
-    #main-container{
+
+    #main-container {
         gap: 50px;
 
     }

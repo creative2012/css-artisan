@@ -1,2 +1,2 @@
-# web-artisan
+# css-artisan
 best elements of the web

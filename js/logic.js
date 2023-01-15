@@ -66,7 +66,7 @@ function copyToClip(button) {
     // Get the text field
     var copyText = button.getAttribute('style', 'box-shadow');
 
-    // Copy the text inside the text field
+    // write to clipboard
     navigator.clipboard.writeText(copyText);
 
     // Alert the copied text

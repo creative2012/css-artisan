@@ -5,22 +5,26 @@ var timeoutID = null;
 function popHomepage(headerText) {
     var header = document.querySelector('#section-header');
     var container = document.querySelector('#main-container');
-    container.style.setProperty('height', '0px');
-    container.innerHTML = '<em>Helping you to do more...</em>';
-    header.innerHTML = '#cssArtisan {<br/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspWelcome: "Hello";<br/>}';
+    container.innerHTML = '';
+    // container.style.setProperty('height', '30px');
+    // container.innerHTML = '<div class="homeDes">A collection of CSS styles you can easily copy and be inspired from, for your own projects</div>';
+    container.setAttribute('class','hide');
+    header.innerHTML = 
+    '<div class="helloMsg">#cssArtisan {<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span style="color:#efff00;">Welcome:</span>&nbsp "Hello"&nbsp ;<br/>}</div>';
     header.setAttribute('class', 'home');
     
 
 }
-function popShadowBoxes() {
+//Function to show other pages
+function popPage(pageContent) {
     var header = document.querySelector('#section-header');
     var container = document.querySelector('#main-container');
     container.innerHTML = '';
     header.removeAttribute('class','home');
-    container.style.removeProperty('height');
+    container.removeAttribute('class','hide');
     header.textContent = 'Box Shadows';
     var i = 1;
-    shadowBoxes.forEach(function (style) {
+    pageContent.forEach(function (style) {
         var box = document.createElement('div');
         var text = document.createElement('span')
         var icon = document.createElement('div');
@@ -90,7 +94,7 @@ function buttonHandler(button) {
     }
     if (button.id == 'boxShadowLink') {
         navController(button);
-        popShadowBoxes();
+        popPage(shadowBoxes);
 
     }
     if (button.id == 'checkBoxesLink') {
@@ -106,6 +110,11 @@ function buttonHandler(button) {
     if (button.id == 'scrollLink') {
         navController(button);
         popGeneric('Scroll bars')
+
+    }
+    if (button.id == 'backgroundLink') {
+        navController(button);
+        popGeneric('Backgrounds')
 
     }
     if (button.classList.contains('shadow-box')) {

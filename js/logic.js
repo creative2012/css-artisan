@@ -19,11 +19,11 @@ function popHomepage() {
                 '<span style="color:#c7bb33;">#cssArtisan {</span><br>'+
                 '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp'+
                 '<span style="color:#80d0ff;">Welcome:</span>&nbsp "Hello"&nbsp ;<br/><span style="color:#c7bb33;">}</span>'+
-                '<a href="#" target="_blank" rel="noopener noreferrer">'+
                 '<div id="social">'+
+                    '<a href="https://github.com/creative2012" target="_blank" rel="noopener noreferrer">'+
                         '<div id="git" ></div>'+
                     '</a>'+
-                    '<a href="#" target="_blank" rel="noopener noreferrer">'+
+                    '<a href="https://www.linkedin.com/in/paul-morris-1b938230/" target="_blank" rel="noopener noreferrer">'+
                         '<div id="linked" ></div>'+
                     '</a>'+
                     '<a href="mailto:creative2012@hotmail.com" >'+

@@ -18,7 +18,15 @@ function popHomepage(headerText) {
     // container.innerHTML = '<div class="homeDes">A collection of CSS styles you can easily copy and be inspired from, for your own projects</div>';
     container.setAttribute('class', 'hide');
     header.innerHTML =
-        '<div class="helloMsg">#cssArtisan {<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span style="color:#efff00;">Welcome:</span>&nbsp "Hello"&nbsp ;<br/>}</div>';
+        '<div class="helloMsg">'+
+            '#cssArtisan {<br>'+
+            '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp'+
+            '<span style="color:#efff00;">Welcome:</span>&nbsp "Hello"&nbsp ;<br/>}'+
+        '</div>'+
+        '<div class="mainDetail">'+
+        '/* A Selection of the webs best CSS to inspire your next project.'+
+        '<br/><br/> Click any of the examples to copy the CSS direct to your clipboard */'+
+        '</div>';
     header.setAttribute('class', 'home');
 
 
@@ -99,6 +107,13 @@ function isHamburger(){
         bigMac.removeAttribute('style','max-height');
     
 }
+//wiggle hello message
+function wiggle(button){
+    button.classList.add('wiggle');
+    setTimeout(function(){
+        button.classList.remove('wiggle');
+    },2500)
+}
 
 //function to handle button clicks
 function buttonHandler(button) {
@@ -145,15 +160,22 @@ function buttonHandler(button) {
     if (button.parentElement.classList.contains('shadow-box')) {
         copyToClip(button.parentElement);
     }
+    //mobile menu icon
     if (button.id == 'ham' && !hamburger) {
         hamburger = true;
         bigMac.setAttribute('style','max-height: 222px');
         return;
     } 
+    if (button.classList.contains('helloMsg') || button.parentElement.classList.contains('helloMsg')) {
+        wiggle(button);
+    }
+    //is mobile menu open? if so close it
     if(hamburger){
        
         isHamburger();
     } 
+   
+
 }
 // isIphone();
 popHomepage('home');

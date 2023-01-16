@@ -148,6 +148,17 @@ footer{
 		background-position: 0% 50%;
 	}
 }
+@keyframes wiggle {
+    0% { transform: rotate(0deg); -webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); -ms-transform: rotate(0deg); -o-transform: rotate(0deg); }
+   80% { transform: rotate(-5deg); -webkit-transform: rotate(-5deg); -moz-transform: rotate(-5deg); -ms-transform: rotate(-5deg); -o-transform: rotate(-5deg); }
+   85% { transform: rotate(5deg); -webkit-transform: rotate(5deg); -moz-transform: rotate(5deg); -ms-transform: rotate(5deg); -o-transform: rotate(5deg); }
+   95% { transform: rotate(-5deg); -webkit-transform: rotate(-5deg); -moz-transform: rotate(-5deg); -ms-transform: rotate(-5deg); -o-transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); -webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); -ms-transform: rotate(0deg); -o-transform: rotate(0deg); }
+}
+.wiggle{
+    animation: wiggle 2s ease;
+    -webkit-animation: wiggle 2s ease;
+}
 
 .helloMsg{
     position: absolute;
@@ -162,11 +173,34 @@ footer{
     -moz-border-radius: 1rem;
     -ms-border-radius: 1rem;
     -o-border-radius: 1rem;
-    transition: all 1s ease;
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -ms-transition: all 1s ease;
-    -o-transition: all 1s ease;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    cursor: pointer;
+}
+.mainDetail{
+    position: absolute;
+    right:calc(50% - 230px);
+    top: 290px;
+    padding: 30px 40px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    width: 320px;
+    font-weight: normal;
+    color: greenyellow;
+    background-color: transparent;
+    font-size: 18px;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
 }
 .homeDes{
     margin-top: 20px;
@@ -256,27 +290,14 @@ footer{
 
 @media (max-width: 830px) {
     .home{
-        /* height: calc(100vh - 220px)!important; */
         font-size: 25px !important;
     }
     .fa-bars{
         display: unset !important;
     }
 
-    /* nav {
-        height: 90px;
-        justify-content: center;
-    }
-
-    nav ul li {
-        padding-bottom: 17px;
-        padding-top: 0px;
-        
-    } */
-
     #hamburgerWrapper {
-        /*display:none;
-        */position: absolute;
+        position: absolute;
         background-color: white;
         top: 80px;
         right:0;
@@ -300,10 +321,10 @@ footer{
         padding:0;
         margin-bottom: 10px;
     }
-
-    /* main {
-        height: calc(100vh - 110px);
-    } */
+    .mainDetail{
+        right:calc(50% - 200px);
+        top: 260px;
+    }
     .homeDes{
         font-size: 14px;
     }
@@ -316,6 +337,11 @@ footer{
         position: absolute;
         left:50px;
         top:50px;
+    }
+    .mainDetail{
+        right:50px;    
+        top: 60px;
+        
     }
 
 }

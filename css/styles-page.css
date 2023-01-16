@@ -167,7 +167,7 @@ footer{
     white-space: nowrap;
     color: white;
     padding: 40px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
     border-radius: 1rem;
     -webkit-border-radius: 1rem;
     -moz-border-radius: 1rem;
@@ -179,13 +179,14 @@ footer{
     -ms-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     cursor: pointer;
+    background-color: darkslategrey;
 }
 .mainDetail{
     position: absolute;
     right:calc(50% - 230px);
-    top: 290px;
+    top: 300px;
     padding: 30px 40px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
     border-radius: 1rem;
     -webkit-border-radius: 1rem;
     -moz-border-radius: 1rem;
@@ -193,8 +194,9 @@ footer{
     -o-border-radius: 1rem;
     width: 320px;
     font-weight: normal;
-    color: greenyellow;
-    background-color: transparent;
+    color: #84d901;
+    background-color: darkslategrey;
+    
     font-size: 18px;
     transition: all 0.5s ease;
     -webkit-transition: all 0.5s ease;
@@ -323,7 +325,7 @@ footer{
     }
     .mainDetail{
         right:calc(50% - 200px);
-        top: 260px;
+        top: 280px;
     }
     .homeDes{
         font-size: 14px;

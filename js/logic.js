@@ -19,14 +19,27 @@ function popHomepage(headerText) {
     container.setAttribute('class', 'hide');
     header.innerHTML =
         '<div class="helloMsg">'+
-            '#cssArtisan {<br>'+
+            '<span style="color:#c7bb33;">#cssArtisan {</span><br>'+
             '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp'+
-            '<span style="color:#efff00;">Welcome:</span>&nbsp "Hello"&nbsp ;<br/>}'+
+            '<span style="color:#80d0ff;">Welcome:</span>&nbsp "Hello"&nbsp ;<br/><span style="color:#c7bb33;">}</span>'+
+            '<a href="#" target="_blank" rel="noopener noreferrer">'+
+            '<div id="social">'+
+                    '<div id="git" ></div>'+
+                '</a>'+
+                '<a href="#" target="_blank" rel="noopener noreferrer">'+
+                    '<div id="linked" ></div>'+
+                '</a>'+
+                '<a href="mailto:creative2012@hotmail.com" >'+
+                    '<div id="email" ></div>'+
+                '</a>'+
+            '</div>'+
         '</div>'+
         '<div class="mainDetail">'+
         '/* A Selection of the webs best CSS to inspire your next project.'+
         '<br/><br/> Click any of the examples to copy the CSS direct to your clipboard */'+
-        '</div>';
+        '</div>'
+        
+                ;
     header.setAttribute('class', 'home');
 
 

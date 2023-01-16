@@ -4,7 +4,6 @@ body {
     font-family: 'Poppins', sans-serif;
   
 }
-
 ul .active {
     border-bottom: 3px solid #3264f86b;
 }
@@ -137,6 +136,7 @@ footer{
 	background-size: 400% 400%;
 	animation: gradient 15s ease infinite;
 }
+
 @keyframes gradient {
 	0% {
 		background-position: 0% 50%;
@@ -224,18 +224,46 @@ footer{
     -ms-transform: scale(1.2);
     -o-transform: scale(1.2);
 }
+.fa-bars{
+    position: absolute;
+    display:none !important;
+    right: 20px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    width:fit-content;
+    height: fit-content;
+    padding: 10px;
+    font-size: 20px !important;
+    border-radius: 0.3rem;
+    -webkit-border-radius: 0.3rem;
+    -moz-border-radius: 0.3rem;
+    -ms-border-radius: 0.3rem;
+    -o-border-radius: 0.3rem;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+}
+.fa-bars:hover{
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
 @media (min-width: 485px) {}
 
 @media (max-width: 830px) {
     .home{
-        height: calc(100vh - 220px)!important;
+        /* height: calc(100vh - 220px)!important; */
         font-size: 25px !important;
     }
-    #nav-left {
-        flex-direction: column;
+    .fa-bars{
+        display: unset !important;
     }
 
-    nav {
+    /* nav {
         height: 90px;
         justify-content: center;
     }
@@ -244,17 +272,38 @@ footer{
         padding-bottom: 17px;
         padding-top: 0px;
         
-    }
+    } */
 
-    nav ul {
+    #hamburgerWrapper {
+        /*display:none;
+        */position: absolute;
+        background-color: white;
+        top: 80px;
+        right:0;
+        padding: 0 20px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        height: 222px;
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.5s ease;
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -ms-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+}
+    nav ul{
+        flex-direction: column;
+        gap: 0;
         padding-left: 0;
-        margin-top: 5px;
-        gap: 15px;
+    }
+    nav ul li{
+        padding:0;
+        margin-bottom: 10px;
     }
 
-    main {
+    /* main {
         height: calc(100vh - 110px);
-    }
+    } */
     .homeDes{
         font-size: 14px;
     }

@@ -1,6 +1,16 @@
 const pageContainer = document.querySelector('main');
 const bigMac = document.querySelector('#hamburgerWrapper');
-const messages = [ 'Do things Differently!','Reach for the stars']
+const messages = [ 
+    'Do things Differently!',
+    'Reach for the stars',
+    'Have no fear of perfection -- youll never reach it',
+    'Design is intelligence made visible.',
+    'Everything is designed. ...',
+    'You cant use up creativity. ...',
+    'Design adds value faster than it adds costs.',
+    'The public is more familiar with bad design than good design.'
+
+]
 var timeoutID = null;
 var hamburger = false;
 var homeMessageID = null;
@@ -14,9 +24,16 @@ function isIphone() {
 //function to change home page message
 function homeMessage(){
     var i = 0;
+    var last = 0;
+    var rand = 0;
     var messagesLength = messages.length;
     homeMessageID = setInterval(function (){
-        var message = messages[Math.floor(Math.random() * messagesLength)];
+        while(true){
+        rand = Math.floor(Math.random() * messagesLength);
+        if (rand != last) break;
+        }
+        last = rand;
+        var message = messages[rand];
         var container = document.querySelector('.message');
         container.setAttribute('style','opacity: 0 ');
         setTimeout(function (){

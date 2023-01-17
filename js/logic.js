@@ -103,6 +103,7 @@ function buttonHandler(button) {
     if (button.id == 'nav-title') {
         navController(button, false);
         popHomepage();
+        isIphone();
         setTimeout(function (){
             homeMessage();
         },2000);

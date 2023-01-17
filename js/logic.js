@@ -18,8 +18,8 @@ var homeMessageID = null;
 function isIphone() {
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
         var msgBox = document.querySelector('.homeMessages');
-        var basicMsg = document.querySelector('basicMsg');
-        basicMsg.classList.add('.basicMsgPH');
+        var basicMsg = document.querySelector('.basicMsg');
+        basicMsg.classList.add('basicMsgPH');
         msgBox.setAttribute('style', 'top: -100px');
         
     }

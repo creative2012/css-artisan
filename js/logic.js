@@ -113,6 +113,7 @@ function buttonHandler(button) {
 // isIphone();
 //show home page on load
 popHomepage('home');
+isIphone();
 //page click listener
 const navContainer = document.querySelector('body');
 navContainer.addEventListener('click', function (e) {

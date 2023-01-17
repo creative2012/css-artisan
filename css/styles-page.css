@@ -143,15 +143,20 @@ footer{
     min-height:calc(100vh - 210px);
 }
 .homeMessages{
-    
+    position: relative;
     max-width: 100%;
-    
     color: white;
     text-align: center;
 }
 .message{
     font-size: 40px;
     font-family: 'Lobster', cursive;
+    opacity: 1;
+    transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    -o-transition: all 1s ease;
 }
 .wiggle{
     animation: wiggle 2s ease;

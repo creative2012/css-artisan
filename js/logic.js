@@ -16,9 +16,9 @@ var hamburger = false;
 var homeMessageID = null;
 //is Iphone?
 function isIphone() {
-    if (navigator.userAgent.match(/iPhone/i)) {
-        var footer = document.querySelector('footer');
-        footer.setAttribute('style', 'bottom: 50px');
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        var msgBox = document.querySelector('.homeMessages');
+        msgBox.setAttribute('style', 'top: -100px');
     }
 }
 //function to change home page message
@@ -183,7 +183,7 @@ popHomepage('home');
 setTimeout(function (){
 homeMessage();
 },2000);
-// isIphone();
+isIphone();
 //page click listener
 const navContainer = document.querySelector('body');
 navContainer.addEventListener('click', function (e) {

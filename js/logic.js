@@ -5,7 +5,8 @@ var hamburger = false;
 //is Iphone?
 function isIphone() {
     if (navigator.userAgent.match(/iPhone/i)) {
-
+        var footer = document.querySelector('footer');
+        footer.setAttribute('style', 'bottom: 50px');
     }
 }
 

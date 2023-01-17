@@ -183,7 +183,7 @@ popHomepage('home');
 setTimeout(function (){
 homeMessage();
 },2000);
-isIphone();
+// isIphone();
 //page click listener
 const navContainer = document.querySelector('body');
 navContainer.addEventListener('click', function (e) {

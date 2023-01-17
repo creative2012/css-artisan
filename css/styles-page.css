@@ -158,6 +158,13 @@ footer{
     -ms-transition: all 1s ease;
     -o-transition: all 1s ease;
 }
+.basicMsgPH{
+    position:fixed;
+    left: 0;
+    text-align: center;
+    width: 100vw;
+    bottom: 100px; 
+}
 .wiggle{
     animation: wiggle 2s ease;
     -webkit-animation: wiggle 2s ease;

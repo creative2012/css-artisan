@@ -18,7 +18,10 @@ var homeMessageID = null;
 function isIphone() {
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
         var msgBox = document.querySelector('.homeMessages');
+        var basicMsg = document.querySelector('.basicMsg');
+        basicMsg.setAttribute('class','.basicMsgPH');
         msgBox.setAttribute('style', 'top: -100px');
+        
     }
 }
 //function to change home page message
@@ -89,14 +92,6 @@ function isHamburger(){
         bigMac.removeAttribute('style','max-height');
     
 }
-//wiggle hello message
-function wiggle(button){
-    button.classList.add('wiggle');
-    setTimeout(function(){
-        button.classList.remove('wiggle');
-    },2500)
-}
-
 //function to handle button clicks
 function buttonHandler(button) {
     
@@ -168,10 +163,6 @@ function buttonHandler(button) {
         return;
 
     } 
-    if (button.classList.contains('helloMsg') || button.parentElement.classList.contains('helloMsg')) {
-        wiggle(button);
-
-    }
     //is mobile menu open? if so close it
     if(hamburger){
         isHamburger();

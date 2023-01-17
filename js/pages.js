@@ -5,7 +5,7 @@ function popHomepage() {
         container.innerHTML = '';
         header.innerHTML = '';
         header.setAttribute('class', 'hide');
-        container.innerHTML = '<div class="homeMessages"><div class="message">Be Inspired..</div><br/>Browse a selection of the webs best CSS, Click any item to copy its CSS directly</div>';
+        container.innerHTML = '<div class="homeMessages"><div class="message">Be Inspired..</div><br/><div class="basicMsg">Browse a selection of the webs best CSS, Click any item to copy its CSS directly</div></div>';
         // container.innerHTML =
         // '<div class="homeWrapper">'+
         //     '<div class="helloMsg">'+

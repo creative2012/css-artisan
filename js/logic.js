@@ -1,13 +1,42 @@
 const pageContainer = document.querySelector('main');
 const bigMac = document.querySelector('#hamburgerWrapper');
+const messages = [ 'Do things Differently!','Reach for the stars']
 var timeoutID = null;
 var hamburger = false;
+var homeMessageID = null;
 //is Iphone?
 function isIphone() {
     if (navigator.userAgent.match(/iPhone/i)) {
         var footer = document.querySelector('footer');
         footer.setAttribute('style', 'bottom: 50px');
     }
+}
+//function to change home page message
+function homeMessage(){
+    var i = 0;
+    var messagesLength = messages.length;
+    homeMessageID = setInterval(function (){
+        var message = messages[Math.floor(Math.random() * messagesLength)];
+        var container = document.querySelector('.message');
+        container.setAttribute('style','opacity: 0 ');
+        setTimeout(function (){
+            container.innerHTML =  message;
+            container.setAttribute('style','opacity: 1');
+        },1000);
+        if(i < messagesLength){
+            i++;
+        } else {
+            i = 0;
+        }           
+
+    },5000);
+
+}
+function clearHomeMessage(){
+    clearInterval(homeMessageID);
+    homeMessageID = null;
+    console.log('here')
+
 }
 
 //Function to copy to clipboard
@@ -56,32 +85,53 @@ function buttonHandler(button) {
     
     if (button.id == 'nav-title') {
         navController(button, false);
-        popHomepage();        
+        popHomepage();
+        setTimeout(function (){
+            homeMessage();
+        },2000);
+        if(homeMessageID != null) {
+            clearHomeMessage();
+        }        
 
     }
     if (button.id == 'boxShadowLink') {
         navController(button);
         popPageBS(shadowBoxes);
+        if(homeMessageID != null) {
+            clearHomeMessage();
+        }
 
     }
     if (button.id == 'checkBoxesLink') {
         navController(button);
         popGeneric('Check Boxes')
+        if(homeMessageID != null) {
+            clearHomeMessage();
+        }
 
     }
     if (button.id == 'buttonsLink') {
         navController(button);
         popPageB(buttonsCSS);
+        if(homeMessageID != null) {
+            clearHomeMessage();
+        }
 
     }
     if (button.id == 'scrollLink') {
         navController(button);
         popGeneric('Scroll bars')
+        if(homeMessageID != null) {
+            clearHomeMessage();
+        }
 
     }
     if (button.id == 'backgroundLink') {
         navController(button);
         popGeneric('Backgrounds')
+        if(homeMessageID != null) {
+            clearHomeMessage();
+        }
 
     }
     //copy CSS to user clipboard
@@ -113,6 +163,9 @@ function buttonHandler(button) {
 // isIphone();
 //show home page on load
 popHomepage('home');
+setTimeout(function (){
+homeMessage();
+},2000);
 isIphone();
 //page click listener
 const navContainer = document.querySelector('body');

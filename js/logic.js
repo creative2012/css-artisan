@@ -16,6 +16,19 @@ function isIphone() {
 }
 //function to change home page message
 function homeMessage(){
+
+    var dynamicAfter = document.createElement("style");
+        dynamicAfter.innerHTML =
+        ".message::after{"+
+            "display: flex;"+
+            "justify-content: end;"+
+            "font-family: 'Poppins', sans-serif;"+
+            "font-size: 15px;"+
+            "font-style: italic;"+
+            "content: '-CSS Artisan';"+
+        "}"
+        document.head.appendChild(dynamicAfter);
+    
     var i = 0;
     var last = 0;
     var rand = 0;
@@ -28,18 +41,18 @@ function homeMessage(){
         last = rand;
         var message = quotes[rand];
         var container = document.querySelector('.message');
-        container.setAttribute('style','opacity: 0 ');
-        setTimeout(function (){
-            dynamicAfter.innerHTML = dynamicAfter.innerHTML.replace(lastQuote, message.author);
-            lastQuote = message.author;
-            container.innerHTML =  message.quote;
-            container.setAttribute('style','opacity: 1');
-        },1000);
-        if(i < messagesLength){
-            i++;
-        } else {
-            i = 0;
-        }           
+            container.setAttribute('style','opacity: 0 ');
+            setTimeout(function (){
+                dynamicAfter.innerHTML = dynamicAfter.innerHTML.replace(lastQuote, message.author);
+                lastQuote = message.author;
+                container.innerHTML =  message.quote;
+                container.setAttribute('style','opacity: 1');
+            },1000);
+            if(i < messagesLength){
+                i++;
+            } else {
+                i = 0;
+            }           
 
     },5000);
 

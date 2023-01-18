@@ -34,18 +34,3 @@ const quotes = [
     
 
 ]
-
-var dynamicAfter = document.createElement("style");
-dynamicAfter.innerHTML =
- ".message::after{"+
-    "display: flex;"+
-    "justify-content: end;"+
-    "font-family: 'Poppins', sans-serif;"+
-    "font-size: 15px;"+
-    "font-style: italic;"+
-    "content: '-CSS Artisan';"+
-"}"
-document.head.appendChild(dynamicAfter);
-
-
-// dynamicAfter.innerHTML = dynamicAfter.innerHTML.replace(/height: [0-9]+px/, "height: 12px");

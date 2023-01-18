@@ -140,7 +140,7 @@ footer{
 	animation: gradient 15s ease infinite;
     background-color: #1e1e1e;
     padding-top:20px !important;
-    min-height:calc(100vh - 210px);
+    min-height:calc(100vh - 220px);
 }
 .homeMessages{
     position: relative;

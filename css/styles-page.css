@@ -144,13 +144,18 @@ footer{
 }
 .homeMessages{
     position: relative;
+    display: flex;
+    flex-direction: column;
     max-width: 100%;
     color: white;
     text-align: center;
 }
 .message{
+    padding: 0 auto;
     font-size: 40px;
     font-family: 'Lobster', cursive;
+    width:fit-content;
+    align-self: center;
     opacity: 1;
     transition: all 1s ease;
     -webkit-transition: all 1s ease;
@@ -159,6 +164,7 @@ footer{
     -o-transition: all 1s ease;
 }
 .basicMsgPH{
+    
     position:fixed;
     left: 0;
     text-align: center;

@@ -1,19 +1,9 @@
 const pageContainer = document.querySelector('main');
 const bigMac = document.querySelector('#hamburgerWrapper');
-const messages = [ 
-    'Do things Differently!',
-    'Reach for the stars',
-    'Have no fear of perfection -- youll never reach it',
-    'Design is intelligence made visible.',
-    'Everything is designed. ...',
-    'You cant use up creativity. ...',
-    'Design adds value faster than it adds costs.',
-    'The public is more familiar with bad design than good design.'
-
-]
 var timeoutID = null;
 var hamburger = false;
 var homeMessageID = null;
+var lastQuote = '-CSS Artisan';
 //is Iphone?
 function isIphone() {
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
@@ -29,18 +19,20 @@ function homeMessage(){
     var i = 0;
     var last = 0;
     var rand = 0;
-    var messagesLength = messages.length;
+    var messagesLength = quotes.length;
     homeMessageID = setInterval(function (){
         while(true){
         rand = Math.floor(Math.random() * messagesLength);
         if (rand != last) break;
         }
         last = rand;
-        var message = messages[rand];
+        var message = quotes[rand];
         var container = document.querySelector('.message');
         container.setAttribute('style','opacity: 0 ');
         setTimeout(function (){
-            container.innerHTML =  message;
+            dynamicAfter.innerHTML = dynamicAfter.innerHTML.replace(lastQuote, message.author);
+            lastQuote = message.author;
+            container.innerHTML =  message.quote;
             container.setAttribute('style','opacity: 1');
         },1000);
         if(i < messagesLength){
@@ -174,7 +166,7 @@ function buttonHandler(button) {
 popHomepage('home');
 setTimeout(function (){
 homeMessage();
-},2000);
+},500);
 isIphone();
 //page click listener
 const navContainer = document.querySelector('body');

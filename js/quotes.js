@@ -16,7 +16,7 @@ const quotes = [
         author:'-Le Corbusier'
     },
     {
-        quote:'Design is intelligence made visible.',
+        quote:'Everything is designed.',
         author:'-Brian Reed'
     },
     {

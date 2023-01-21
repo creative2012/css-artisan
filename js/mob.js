@@ -6,6 +6,6 @@ function isMobile() {
         var basicMsg = document.querySelector('.basicMsg');
         basicMsg.classList.add('basicMsgPH');
         msgBox.setAttribute('style', 'top: -100px');
-        
+        document.querySelector('main').setAttribute('style', 'height: calc(100vh - 130px);');
     }
 }

@@ -7,7 +7,9 @@ var lastQuote = '-CSS Artisan';
 
 //function to change home page message
 function homeMessage(){
-
+    if(homeMessageID != null) {
+        clearHomeMessage();
+    }     
     var dynamicAfter = document.createElement("style");
         dynamicAfter.innerHTML =
         ".message::after{"+
@@ -94,13 +96,7 @@ function buttonHandler(button) {
         navController(button, false);
         popHomepage();
         isMobile();
-        setTimeout(function (){
-            homeMessage();
-        },2000);
-        if(homeMessageID != null) {
-            clearHomeMessage();
-        }        
-
+        homeMessage();
     }
     if (button.id == 'boxShadowLink') {
         navController(button);
@@ -168,9 +164,9 @@ function buttonHandler(button) {
 //show home page on load
 popHomepage('home');
 isMobile();
-setTimeout(function (){
+
 homeMessage();
-},500);
+
 //page click listener
 const navContainer = document.querySelector('body');
 navContainer.addEventListener('click', function (e) {

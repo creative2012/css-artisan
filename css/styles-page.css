@@ -122,6 +122,7 @@ main {
 }
 
 footer{
+    overflow: hidden;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -133,10 +134,14 @@ footer{
     height:70px;
     color: black;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    /* background-color: #3265f8; */
-    background-color: white;
+    /*background-color: #3265f8;
+    */background-color: white;
     color: lightslategrey;
-
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
 }
 
 .home{

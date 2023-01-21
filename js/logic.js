@@ -51,7 +51,6 @@ function homeMessage(){
 function clearHomeMessage(){
     clearInterval(homeMessageID);
     homeMessageID = null;
-    console.log('here')
 
 }
 
@@ -178,3 +177,15 @@ navContainer.addEventListener('click', function (e) {
     buttonHandler(e.target);
 
 });
+
+document.querySelector('main').onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.querySelector('main').scrollTop > 10 ) {
+    document.querySelector('footer').style.bottom = "-70px";
+    
+  } else {
+    document.querySelector('footer').style.bottom = "0";
+    
+  }
+}

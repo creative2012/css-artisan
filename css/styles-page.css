@@ -2,7 +2,14 @@ body {
     margin: 0;
     overflow: hidden;
     font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    min-height: fill-available;
+    min-height: -webkit-fill-available;
   
+}
+html {
+    height: fill-available;
+    height: -webkit-fill-available;
 }
 ul .active {
     border-bottom: 3px solid #3264f86b;
@@ -301,7 +308,8 @@ footer{
 
 @media (min-width: 1630px) {
     #main-container {
-        padding: 0 100px;
+        padding-left: 100px;
+        padding-right: 100px;
     }
     
 }

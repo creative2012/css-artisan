@@ -4,16 +4,7 @@ var timeoutID = null;
 var hamburger = false;
 var homeMessageID = null;
 var lastQuote = '-CSS Artisan';
-//is Iphone?
-function isIphone() {
-    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        var msgBox = document.querySelector('.homeMessages');
-        var basicMsg = document.querySelector('.basicMsg');
-        basicMsg.classList.add('basicMsgPH');
-        msgBox.setAttribute('style', 'top: -100px');
-        
-    }
-}
+
 //function to change home page message
 function homeMessage(){
 
@@ -180,7 +171,7 @@ popHomepage('home');
 setTimeout(function (){
 homeMessage();
 },500);
-isIphone();
+isMobile();
 //page click listener
 const navContainer = document.querySelector('body');
 navContainer.addEventListener('click', function (e) {

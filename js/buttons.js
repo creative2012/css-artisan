@@ -76,7 +76,7 @@ const buttonsCSS = [
             
         ],    
         style:{
-            button: 'align-items: center;background-color: #0A66C2;border: 0;border-radius: 100px;box-sizing: border-box;color: #ffffff;cursor: pointer;display: inline-flex;justify-content: center;text-align: center;touch-action: manipulation;user-select: none;-webkit-user-select: none;vertical-align: middle;padding: 8px 16px;',
+            button: 'background-color: #0A66C2;border: 0;border-radius: 100px;color: #ffffff;cursor: pointer;touch-action: manipulation;user-select: none;-webkit-user-select: none;',
             focus: "background-color: #16437E;color: #ffffff;"
         },
         credit: 'Linkedin'

@@ -1,7 +1,8 @@
+const header = document.querySelector('#section-header');
+const container = document.querySelector('#main-container');
 //function to show homepage
 function popHomepage() {
-    var header = document.querySelector('#section-header');
-    var container = document.querySelector('#main-container');
+
         container.innerHTML = '';
         header.innerHTML = '';
         header.setAttribute('class', 'hide');
@@ -22,45 +23,90 @@ function popHomepage() {
 
 }
 //Function to show box shadows page
-function popPageBS(pageContent) {
-    var header = document.querySelector('#section-header');
-    var container = document.querySelector('#main-container');
-        container.innerHTML = '';
-        header.removeAttribute('class', 'home');
-        container.removeAttribute('class', 'hide');
-        header.textContent = 'Box Shadows';
+function popPageBS(pageContent) {   
+        setPage('Box Shadows');
     var i = 1;
         pageContent.forEach(function (style) {
         var box = document.createElement('div');
         var text = document.createElement('span')
-        var icon = document.createElement('div');
         var number = document.createElement('div');
-
+        
             box.classList.add('shadow-box');
-            box.setAttribute('style', style)
+            box.setAttribute('style', style);
             text.textContent = "Copy CSS";
-            icon.setAttribute('class', 'copyIcon');
             number.setAttribute('class', 'shadowBoxNo');
             number.textContent = i
 
             box.appendChild(text);
             box.appendChild(number);
-            box.appendChild(icon);
             container.appendChild(box);
             i++;
     });
 
 }
+
 //Function to show buttons page
 function popPageB(pageContent) {
-    navigator.clipboard.writeText(pageContent[0].css.join('\r\n'));
+        setPage('Buttons');
+    var i = 1;
+        pageContent.forEach(function (item, index) {
+        var box = document.createElement('div');
+        var text = document.createElement('span')
+        var id = 'button'+index;
+            box.classList.add('button');
+            // box.setAttribute('style', item.style.button);
+            box.setAttribute('id', id);
+            box.setAttribute('data-id', index);
+            text.textContent = "Copy CSS";
+
+            box.appendChild(text);
+            container.appendChild(box);
+            addStyleTag('#'+id+' { '+item.style.button+' }'+'#'+id+':hover { '+item.style.focus+' }')
+            var dynamicAfter = document.createElement("style");
+            dynamicAfter.innerHTML =
+            "#"+id+"::after{"+
+                "position:absolute;"+
+                "bottom: -20px;"+
+                "display: flex;"+
+                "justify-content: end;"+
+                "color: black; !important"+
+                "font-family: 'Poppins', sans-serif;"+
+                "font-size: 12px;"+
+                "font-style: italic;"+
+                "content:'"+(index+1)+" - "+item.credit+"';"+
+            "}"
+            document.head.appendChild(dynamicAfter);
+            i++;
+    });
 
 }
 //just for testing
 function popGeneric(headerText) {
-    var header = document.querySelector('#section-header');
-    var container = document.querySelector('#main-container');
+
         container.innerHTML = '';
         header.innerHTML = headerText;
 
+}
+function setPage(title){
+        container.innerHTML = '';
+        header.removeAttribute('class', 'home');
+        container.removeAttribute('class', 'hide');
+        header.textContent = title;
+    
+}
+function addStyleTag(css){
+    
+        
+            head = document.head || document.getElementsByTagName('head')[0],
+            style = document.createElement('style');
+
+            head.appendChild(style);
+
+            style.type = 'text/css';
+            if (style.styleSheet){
+                // This is required for IE8 and below.
+                style.styleSheet.cssText = css;
+            } else {
+                style.appendChild(document.createTextNode(css));
+            }
 }

@@ -57,14 +57,21 @@ function clearHomeMessage(){
 }
 
 //Function to copy to clipboard
-function copyToClip(button) {
+function copyToClip(page, button) {
+    var copyText;
+    if(page == 'shadow-boxes'){
         // Get the text field
-    var copyText = button.getAttribute('style', 'box-shadow');
+        copyText = button.getAttribute('style', 'box-shadow');
         // write to clipboard
         navigator.clipboard.writeText(copyText);
-        // Alert the copied text
-        boxAlert(button);
-
+        
+    }
+    if(page == "button"){
+        copyText = buttonsCSS[button].clipboard;
+        // write to clipboard
+        navigator.clipboard.writeText(copyText.join('\r\n'));
+    }
+    
 }
 //function to alert copyed to clip
 function boxAlert(button) {
@@ -138,14 +145,25 @@ function buttonHandler(button) {
         }
 
     }
-    //copy CSS to user clipboard
+    //copy shadow CSS to user clipboard
     if (button.classList.contains('shadow-box')) {
-        copyToClip(button);
+        copyToClip('shadow-box',button);
+        boxAlert(button);
 
     }
     if (button.parentElement.classList.contains('shadow-box')) {
-        copyToClip(button.parentElement);
+        copyToClip('shadow-box',button.parentElement);
+        boxAlert(button);
 
+    }
+    //copy button CSS to user clipboard
+    if (button.classList.contains('button')) {
+        copyToClip('button',button.getAttribute('data-id'));
+        boxAlert(button);
+    }
+    if (button.parentElement.classList.contains('button')) {
+        copyToClip('button',button.parentElement.getAttribute('data-id'));
+        boxAlert(button);
     }
     //mobile menu icon
     if (button.id == 'ham' && !hamburger) {

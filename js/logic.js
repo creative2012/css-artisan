@@ -97,6 +97,7 @@ function buttonHandler(button) {
         setTimeout(function (){
             homeMessage();
         },2000);
+        isMobile();
         if(homeMessageID != null) {
             clearHomeMessage();
         }        

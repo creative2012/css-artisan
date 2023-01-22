@@ -6,54 +6,54 @@ var homeMessageID = null;
 var lastQuote = '-CSS Artisan';
 
 //function to change home page message
-function homeMessage(){
-    if(homeMessageID != null) {
+function homeMessage() {
+    if (homeMessageID != null) {
         clearHomeMessage();
-    }     
+    }
 
     var dynamicAfter = document.createElement("style");
-        dynamicAfter.innerHTML =
-        ".message::after{"+
-            "display: flex;"+
-            "justify-content: end;"+
-            "font-family: 'Poppins', sans-serif;"+
-            "font-size: 15px;"+
-            "font-style: italic;"+
-            "content: '-CSS Artisan';"+
+    dynamicAfter.innerHTML =
+        ".message::after{" +
+        "display: flex;" +
+        "justify-content: end;" +
+        "font-family: 'Poppins', sans-serif;" +
+        "font-size: 15px;" +
+        "font-style: italic;" +
+        "content: '-CSS Artisan';" +
         "}"
-        document.head.appendChild(dynamicAfter);
-    
+    document.head.appendChild(dynamicAfter);
+
     var i = 0;
     var last = 0;
     var rand = 0;
     var messagesLength = quotes.length;
-    homeMessageID = setInterval(function (){
-            while(true){
-                rand = Math.floor(Math.random() * messagesLength);
+    homeMessageID = setInterval(function () {
+        while (true) {
+            rand = Math.floor(Math.random() * messagesLength);
             if (rand != last) break;
-            }
+        }
 
-            last = rand;
+        last = rand;
         var message = quotes[rand];
         var container = document.querySelector('.message');
-            container.setAttribute('style','opacity: 0 ');
-            setTimeout(function (){
-                dynamicAfter.innerHTML = dynamicAfter.innerHTML.replace(lastQuote, message.author);
-                lastQuote = message.author;
-                container.innerHTML =  message.quote;
-                container.setAttribute('style','opacity: 1');
-            },1000);
+        container.setAttribute('style', 'opacity: 0 ');
+        setTimeout(function () {
+            dynamicAfter.innerHTML = dynamicAfter.innerHTML.replace(lastQuote, message.author);
+            lastQuote = message.author;
+            container.innerHTML = message.quote;
+            container.setAttribute('style', 'opacity: 1');
+        }, 1000);
 
-            if(i < messagesLength){
-                i++;
-            } else {
-                i = 0;
-            }           
+        if (i < messagesLength) {
+            i++;
+        } else {
+            i = 0;
+        }
 
-    },5000);
+    }, 5000);
 
 }
-function clearHomeMessage(){
+function clearHomeMessage() {
     clearInterval(homeMessageID);
     homeMessageID = null;
 
@@ -62,9 +62,9 @@ function clearHomeMessage(){
 //Function to copy to clipboard
 function copyToClip(text) {
 
-        // write to clipboard
-        navigator.clipboard.writeText(text);
-    
+    // write to clipboard
+    navigator.clipboard.writeText(text);
+
 }
 
 //function to alert copyed to clip
@@ -77,24 +77,24 @@ function boxAlert(button) {
 }
 //function to control active nav itom
 function navController(button, change = true) {
-        if (change) button.style.color = 'black';
+    if (change) button.style.color = 'black';
 
     var inactive = document.querySelector('.active');
-        inactive.classList.remove('active');
-        
-        if (inactive.id != 'nav-title') inactive.style.color = 'lightslategrey';
-        button.classList.add('active');
+    inactive.classList.remove('active');
+
+    if (inactive.id != 'nav-title') inactive.style.color = 'lightslategrey';
+    button.classList.add('active');
 
 }
 //close hamburger menu
-function isHamburger(){
-        hamburger = false;
-        bigMac.removeAttribute('style','max-height');
-    
+function isHamburger() {
+    hamburger = false;
+    bigMac.removeAttribute('style', 'max-height');
+
 }
 //function to handle button clicks
 function buttonHandler(button) {
-    
+
     if (button.id == 'nav-title') {
         navController(button, false);
         popHomepage();
@@ -104,7 +104,7 @@ function buttonHandler(button) {
     if (button.id == 'boxShadowLink') {
         navController(button);
         popPageBS(shadowBoxes);
-        if(homeMessageID != null) {
+        if (homeMessageID != null) {
             clearHomeMessage();
         }
 
@@ -112,7 +112,7 @@ function buttonHandler(button) {
     if (button.id == 'checkBoxesLink') {
         navController(button);
         popGeneric('Check Boxes')
-        if(homeMessageID != null) {
+        if (homeMessageID != null) {
             clearHomeMessage();
         }
 
@@ -120,7 +120,7 @@ function buttonHandler(button) {
     if (button.id == 'buttonsLink') {
         navController(button);
         popPageB(buttonsCSS);
-        if(homeMessageID != null) {
+        if (homeMessageID != null) {
             clearHomeMessage();
         }
 
@@ -128,7 +128,7 @@ function buttonHandler(button) {
     if (button.id == 'scrollLink') {
         navController(button);
         popGeneric('Scroll bars')
-        if(homeMessageID != null) {
+        if (homeMessageID != null) {
             clearHomeMessage();
         }
 
@@ -136,7 +136,7 @@ function buttonHandler(button) {
     if (button.id == 'backgroundLink') {
         navController(button);
         popGeneric('Backgrounds')
-        if(homeMessageID != null) {
+        if (homeMessageID != null) {
             clearHomeMessage();
         }
 
@@ -165,15 +165,15 @@ function buttonHandler(button) {
     //mobile menu icon
     if (button.id == 'ham' && !hamburger) {
         hamburger = true;
-        bigMac.setAttribute('style','max-height: 222px');
+        bigMac.setAttribute('style', 'max-height: 222px');
         return;
 
-    } 
+    }
     //is mobile menu open? if so close it
-    if(hamburger){
+    if (hamburger) {
         isHamburger();
-    } 
-   
+    }
+
 }
 // isIphone();
 //show home page on load
@@ -189,14 +189,14 @@ navContainer.addEventListener('click', function (e) {
 
 });
 
-document.querySelector('main').onscroll = function() {scrollFunction()};
+document.querySelector('main').onscroll = function () { scrollFunction() };
 
 function scrollFunction() {
-  if (document.querySelector('main').scrollTop > 10 ) {
-    document.querySelector('footer').style.bottom = "-70px";
-    
-  } else {
-    document.querySelector('footer').style.bottom = "0";
-    
-  }
+    if (document.querySelector('main').scrollTop > 10) {
+        document.querySelector('footer').style.bottom = "-70px";
+
+    } else {
+        document.querySelector('footer').style.bottom = "0";
+
+    }
 }

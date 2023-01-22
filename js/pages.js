@@ -28,62 +28,40 @@ function popPageBS(pageContent) {
             box.appendChild(text);
             box.appendChild(number);
             container.appendChild(box);
+            // var dynamicAfter = document.createElement("style");
+            // dynamicAfter.innerHTML =
+            // `#button${id}::after{
+            //     position:absolute;
+            //     bottom: -20px;
+            //     display: flex;
+            //     justify-content: end;
+            //     color: black; !important
+            //     font-family: 'Poppins', sans-serif;
+            //     font-size: 12px;
+            //     font-style: italic;
+            //     content:'${index+1} - "${item.credit}";`
+            // "}"
+            // document.head.appendChild(dynamicAfter);
             i++;
     });
 
 }
 
-//Function to show buttons page
-function popPageB1(pageContent) {
-        setPage('Buttons');
-    var i = 1;
-        pageContent.forEach(function (item, index) {
-        var box = document.createElement('div');
-        var text = document.createElement('span')
-        var id = 'button'+index;
-            box.classList.add('button');
-            // box.setAttribute('style', item.style.button);
-            box.setAttribute('id', id);
-            box.setAttribute('data-id', index);
-            text.textContent = "Copy CSS";
-
-            box.appendChild(text);
-            container.appendChild(box);
-            addStyleTag('#'+id+' { '+item.style.button+' }'+'#'+id+':hover { '+item.style.focus+' }')
-        var dynamicAfter = document.createElement("style");
-            dynamicAfter.innerHTML =
-            `#button${id}::after{
-                position:absolute;
-                bottom: -20px;
-                display: flex;
-                justify-content: end;
-                color: black; !important
-                font-family: 'Poppins', sans-serif;
-                font-size: 12px;
-                font-style: italic;
-                content:'${index+1} - "${item.credit}";`
-            "}"
-            document.head.appendChild(dynamicAfter);
-            i++;
-    });
-
-}
 function popPageB(pageContent){
     setPage('Buttons');
     var i = 1;
     pageContent.forEach(function (item, index) {
-        let innerHTML = `<button class="item" id="button-${index}" role="button">Click to copy</button>`;
+        let innerHTML = `<button class="item" id="button-${index+1}" role="button"><span>Click to copy</span></button>`;
         var box = document.createElement('div');
         box.innerHTML = `
         <div class="buttonWrapper">
-          ${innerHTML}
-          <span class="credit">
-        <span>${index+1} </span>
-          by ${item.credit}
-        </span>
+            ${innerHTML}
+            <span class="credit">
+                <span>${index+1} </span>by ${item.credit}
+            </span>
         </div>
         <style>
-          ${item.style.replace(/{ID}/g, `#button-${index}`)}
+          ${item.style.replace(/{ID}/g, `#button-${index+1}`)}
         </style>
         
       `

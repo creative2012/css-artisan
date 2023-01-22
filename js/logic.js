@@ -157,6 +157,11 @@ function buttonHandler(button) {
         copyToClip(button.parentNode.parentNode.innerHTML);
         boxAlert(button);
     }
+    if (button.parentElement.classList.contains('item')) {
+        copyToClip(button.parentNode.parentNode.parentNode.innerHTML);
+        boxAlert(button);
+
+    }
     //mobile menu icon
     if (button.id == 'ham' && !hamburger) {
         hamburger = true;

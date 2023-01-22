@@ -21,11 +21,6 @@
 }
 
 .item{
-    transition: all 0.5s ease;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
     cursor: pointer;
 }
 .buttonWrapper{
@@ -33,14 +28,22 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 180px;
-    height: 180px;
+    width: 170px;
+    height: 120px;    
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    padding: 10px;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
 }
 
-.item:hover {
-    text-decoration:underline;
-
-}
 
 .shadowBoxNo {
     position: absolute;
@@ -52,7 +55,7 @@
 }
 .credit{
     position: absolute;
-    top:30px;
+    bottom:0px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -72,17 +75,19 @@
 
 
 @media (max-width: 652px) {
+    
     .shadow-box {
         height: 140px;
         width: 140px;
     }
-
+    
     #main-container {
         gap: 50px;
 
     }
 }
 @media (min-width: 1630px) {
+    .buttonWrapper,
     .shadow-box {
         height: 200px;
         width: 200px;

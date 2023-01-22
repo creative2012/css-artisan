@@ -75,7 +75,6 @@
 
 
 @media (max-width: 652px) {
-    
     .shadow-box {
         height: 140px;
         width: 140px;
@@ -87,9 +86,12 @@
     }
 }
 @media (min-width: 1630px) {
-    .buttonWrapper,
+    
     .shadow-box {
         height: 200px;
         width: 200px;
+    }
+    .buttonWrapper{
+        width: 180px;
     }
 }

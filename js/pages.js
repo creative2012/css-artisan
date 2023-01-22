@@ -44,6 +44,7 @@ function popPageBS(pageContent) {
             // document.head.appendChild(dynamicAfter);
             i++;
     });
+    
 
 }
 
@@ -67,6 +68,7 @@ function popPageB(pageContent){
       `
       container.appendChild(box);
     });
+   
 }
 //just for testing
 function popGeneric(headerText) {
@@ -75,6 +77,7 @@ function popGeneric(headerText) {
 
 }
 function setPage(title){
+        pageContainer.scrollTo(0,0);
         container.innerHTML = '';
         header.removeAttribute('class', 'home');
         container.removeAttribute('class', 'hide');

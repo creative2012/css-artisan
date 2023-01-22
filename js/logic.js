@@ -4,6 +4,7 @@ var timeoutID = null;
 var hamburger = false;
 var homeMessageID = null;
 var lastQuote = '-CSS Artisan';
+const messagesLength = quotes.length;
 
 //function to change home page message
 function homeMessage() {
@@ -23,19 +24,16 @@ function homeMessage() {
         "}"
     document.head.appendChild(dynamicAfter);
 
-    var i = 0;
     var last = 0;
     var rand = 0;
-    var messagesLength = quotes.length;
     homeMessageID = setInterval(function () {
         while (true) {
             rand = Math.floor(Math.random() * messagesLength);
             if (rand != last) break;
         }
-
         last = rand;
-        var message = quotes[rand];
-        var container = document.querySelector('.message');
+        let message = quotes[rand];
+        let container = document.querySelector('.message');
         container.setAttribute('style', 'opacity: 0 ');
         setTimeout(function () {
             dynamicAfter.innerHTML = dynamicAfter.innerHTML.replace(lastQuote, message.author);
@@ -43,13 +41,6 @@ function homeMessage() {
             container.innerHTML = message.quote;
             container.setAttribute('style', 'opacity: 1');
         }, 1000);
-
-        if (i < messagesLength) {
-            i++;
-        } else {
-            i = 0;
-        }
-
     }, 5000);
 
 }

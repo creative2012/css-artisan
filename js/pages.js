@@ -7,18 +7,6 @@ function popHomepage() {
         header.innerHTML = '';
         header.setAttribute('class', 'hide');
         container.innerHTML = '<div class="homeMessages"><div class="message">Be Inspired..</div><br/><div class="basicMsg">Browse a selection of the webs best CSS, Click any item to copy its CSS directly</div></div>';
-        // container.innerHTML =
-        // '<div class="homeWrapper">'+
-        //     '<div class="helloMsg">'+
-        //         '<span style="color:#c7bb33;">#cssArtisan {</span><br>'+
-        //         '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp'+
-        //         '<span style="color:#80d0ff;">Welcome:</span>&nbsp "Hello"&nbsp ;<br/><span style="color:#c7bb33;">}</span>'+
-        //     '</div>'+
-        //     '<div class="mainDetail">'+
-        //         '/* A Selection of the webs best CSS to inspire your next project.'+
-        //         '<br/><br/> Click any of the examples to copy the CSS direct to your clipboard */'+
-        //     '</div>'+
-        // '</div>';
         container.setAttribute('class', 'home');
 
 }
@@ -46,7 +34,7 @@ function popPageBS(pageContent) {
 }
 
 //Function to show buttons page
-function popPageB(pageContent) {
+function popPageB1(pageContent) {
         setPage('Buttons');
     var i = 1;
         pageContent.forEach(function (item, index) {
@@ -62,27 +50,48 @@ function popPageB(pageContent) {
             box.appendChild(text);
             container.appendChild(box);
             addStyleTag('#'+id+' { '+item.style.button+' }'+'#'+id+':hover { '+item.style.focus+' }')
-            var dynamicAfter = document.createElement("style");
+        var dynamicAfter = document.createElement("style");
             dynamicAfter.innerHTML =
-            "#"+id+"::after{"+
-                "position:absolute;"+
-                "bottom: -20px;"+
-                "display: flex;"+
-                "justify-content: end;"+
-                "color: black; !important"+
-                "font-family: 'Poppins', sans-serif;"+
-                "font-size: 12px;"+
-                "font-style: italic;"+
-                "content:'"+(index+1)+" - "+item.credit+"';"+
+            `#button${id}::after{
+                position:absolute;
+                bottom: -20px;
+                display: flex;
+                justify-content: end;
+                color: black; !important
+                font-family: 'Poppins', sans-serif;
+                font-size: 12px;
+                font-style: italic;
+                content:'${index+1} - "${item.credit}";`
             "}"
             document.head.appendChild(dynamicAfter);
             i++;
     });
 
 }
+function popPageB(pageContent){
+    setPage('Buttons');
+    var i = 1;
+    pageContent.forEach(function (item, index) {
+        let innerHTML = `<button class="item" id="button-${index}" role="button">Click to copy</button>`;
+        var box = document.createElement('div');
+        box.innerHTML = `
+        <div class="buttonWrapper">
+          ${innerHTML}
+          <span class="credit">
+        <span>${index+1} </span>
+          by ${item.credit}
+        </span>
+        </div>
+        <style>
+          ${item.style.replace(/{ID}/g, `#button-${index}`)}
+        </style>
+        
+      `
+      container.appendChild(box);
+    });
+}
 //just for testing
 function popGeneric(headerText) {
-
         container.innerHTML = '';
         header.innerHTML = headerText;
 
@@ -95,13 +104,9 @@ function setPage(title){
     
 }
 function addStyleTag(css){
-    
-        
             head = document.head || document.getElementsByTagName('head')[0],
             style = document.createElement('style');
-
             head.appendChild(style);
-
             style.type = 'text/css';
             if (style.styleSheet){
                 // This is required for IE8 and below.

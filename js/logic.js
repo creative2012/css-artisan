@@ -10,6 +10,7 @@ function homeMessage(){
     if(homeMessageID != null) {
         clearHomeMessage();
     }     
+
     var dynamicAfter = document.createElement("style");
         dynamicAfter.innerHTML =
         ".message::after{"+
@@ -27,11 +28,12 @@ function homeMessage(){
     var rand = 0;
     var messagesLength = quotes.length;
     homeMessageID = setInterval(function (){
-        while(true){
-        rand = Math.floor(Math.random() * messagesLength);
-        if (rand != last) break;
-        }
-        last = rand;
+            while(true){
+                rand = Math.floor(Math.random() * messagesLength);
+            if (rand != last) break;
+            }
+
+            last = rand;
         var message = quotes[rand];
         var container = document.querySelector('.message');
             container.setAttribute('style','opacity: 0 ');
@@ -41,6 +43,7 @@ function homeMessage(){
                 container.innerHTML =  message.quote;
                 container.setAttribute('style','opacity: 1');
             },1000);
+
             if(i < messagesLength){
                 i++;
             } else {
@@ -57,22 +60,13 @@ function clearHomeMessage(){
 }
 
 //Function to copy to clipboard
-function copyToClip(page, button) {
-    var copyText;
-    if(page == 'shadow-boxes'){
-        // Get the text field
-        copyText = button.getAttribute('style', 'box-shadow');
+function copyToClip(text) {
+
         // write to clipboard
-        navigator.clipboard.writeText(copyText);
-        
-    }
-    if(page == "button"){
-        copyText = buttonsCSS[button].clipboard;
-        // write to clipboard
-        navigator.clipboard.writeText(copyText.join('\r\n'));
-    }
+        navigator.clipboard.writeText(text);
     
 }
+
 //function to alert copyed to clip
 function boxAlert(button) {
     button.firstChild.textContent = "Copyed to clip!";
@@ -84,8 +78,10 @@ function boxAlert(button) {
 //function to control active nav itom
 function navController(button, change = true) {
         if (change) button.style.color = 'black';
+
     var inactive = document.querySelector('.active');
         inactive.classList.remove('active');
+        
         if (inactive.id != 'nav-title') inactive.style.color = 'lightslategrey';
         button.classList.add('active');
 
@@ -147,22 +143,18 @@ function buttonHandler(button) {
     }
     //copy shadow CSS to user clipboard
     if (button.classList.contains('shadow-box')) {
-        copyToClip('shadow-box',button);
+        copyToClip(button.getAttribute('style', 'box-shadow'));
         boxAlert(button);
 
     }
     if (button.parentElement.classList.contains('shadow-box')) {
-        copyToClip('shadow-box',button.parentElement);
+        copyToClip(button.parentElement.getAttribute('style', 'box-shadow'));
         boxAlert(button);
 
     }
     //copy button CSS to user clipboard
-    if (button.classList.contains('button')) {
-        copyToClip('button',button.getAttribute('data-id'));
-        boxAlert(button);
-    }
-    if (button.parentElement.classList.contains('button')) {
-        copyToClip('button',button.parentElement.getAttribute('data-id'));
+    if (button.classList.contains('item')) {
+        copyToClip(button.parentNode.parentNode.innerHTML);
         boxAlert(button);
     }
     //mobile menu icon

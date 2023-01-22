@@ -1,0 +1,7 @@
+const checkBoxes = [
+    {
+        style:``,
+        credit:""
+    }
+
+]

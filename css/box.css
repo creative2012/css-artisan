@@ -55,7 +55,7 @@
 }
 .credit{
     position: absolute;
-    bottom:0px;
+    bottom:10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -63,13 +63,15 @@
     font-size: 12px;
     font-style: italic;
     padding-top: 5px;
-    
+
 }
 .credit span{
+    position:absolute;
     color: lightslategrey;
     margin-right: 10px;
     font-size: 18px;
     font-style: normal;
+    top:-110px;
 }
 
 

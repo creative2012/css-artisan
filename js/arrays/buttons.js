@@ -1,6 +1,55 @@
 const buttonsCSS = [
-    {
-        style:`{ID}{
+  {
+    style: `
+    {ID} {
+      background-color: white;
+      border: 1px solid grey;
+      border-radius: 20px;
+      margin-bottom: 10px;
+      width: 150px;
+      height: 40px;
+      max-width: 110px;
+      transition: all 0.2s ease-in !important;
+  
+  
+  }
+  
+  {ID}:hover {
+     
+      color: black !important;
+      font-weight: bold;
+      max-width: 150px;
+      box-shadow: black 0px 6px;
+  }`,
+    credit: "Paul Morris"
+
+  },
+  {
+    style: `
+    {ID}{
+      background-color: white;
+      border: none;
+      box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+      color: #333333;
+      padding: 10px 20px;
+      border-radius: 1.2rem;
+      transition: all 0.2s ease;
+      -webkit-transition: all 0.2s ease;
+      -moz-transition: all 0.2s ease;
+      -ms-transition: all 0.2s ease;
+      -o-transition: all 0.2s ease;
+    }
+    
+    {ID}:hover{
+      background-color: white;
+      color: black;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+    }`,
+    credit: "Paul Morris"
+
+  },
+  {
+    style: `{ID}{
             appearance: button;
             backface-visibility: hidden;
             background-color: #405cf5;
@@ -36,11 +85,11 @@ const buttonsCSS = [
             {ID}:hover {
             box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
             } `,
-        credit: "Stripe"
+    credit: "Stripe"
 
-    },
-    {
-        style:`{ID} {
+  },
+  {
+    style: `{ID} {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -62,11 +111,11 @@ const buttonsCSS = [
             box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2), 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
             outline: 0;
           }`,
-        credit: "macOS Big Sur"
+    credit: "macOS Big Sur"
 
-    },
-    {
-        style:`{ID} {
+  },
+  {
+    style: `{ID} {
             align-items: center;
             background-color: #0A66C2;
             border: 0;
@@ -111,11 +160,11 @@ const buttonsCSS = [
             background: rgba(0, 0, 0, .08);
             color: rgba(0, 0, 0, .3);
           }`,
-        credit: "Linkedin"
+    credit: "Linkedin"
 
-    },
-    {
-        style:`{ID}{
+  },
+  {
+    style: `{ID}{
             align-items: center;
             background-color: #fff;
             border-radius: 12px;
@@ -146,11 +195,11 @@ const buttonsCSS = [
           {ID}:hover {
             box-shadow: #121212 0 0 0 3px, transparent 0 0 0 0;
           }`,
-        credit: "Mouseless"
+    credit: "Mouseless"
 
-    },
-    {
-        style:`{ID}{
+  },
+  {
+    style: `{ID}{
             align-items: center;
             background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
             border: 0;
@@ -198,11 +247,11 @@ const buttonsCSS = [
               min-width: 196px;
             }
           }`,
-        credit: "Greenlight"
+    credit: "Greenlight"
 
-    },
-    {
-        style:`{ID}{
+  },
+  {
+    style: `{ID}{
             padding: 0.6em 2em;
             border: none;
             outline: none;
@@ -268,11 +317,11 @@ const buttonsCSS = [
             top: 0;
             border-radius: 10px;
           }`,
-        credit: "CSS Scan"
+    credit: "CSS Scan"
 
-    },
-    {
-        style:`{ID}{
+  },
+  {
+    style: `{ID}{
             background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
             border: 0;
             border-radius: 12px;
@@ -301,33 +350,8 @@ const buttonsCSS = [
           {ID}:not([disabled]):hover {
             box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
           }`,
-        credit: "Pintura (pqina)"
+    credit: "Pintura (pqina)"
 
-    },
-    {
-      style:`
-      {ID} {
-        background-color: white;
-        border: 1px solid grey;
-        border-radius: 20px;
-        margin-bottom: 10px;
-        width: 150px;
-        height: 40px;
-        max-width: 110px;
-        transition: all 0.2s ease-in !important;
-    
-    
-    }
-    
-    {ID}:hover {
-       
-        color: black !important;
-        font-weight: bold;
-        max-width: 150px;
-        box-shadow: black 0px 6px;
-    }`,
-      credit: "Paul Morris"
+  },
 
-  }
-    
 ]

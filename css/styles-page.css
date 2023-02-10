@@ -28,6 +28,7 @@ nav {
 }
 
 nav ul {
+    font-size: 18px;
     display: flex;
     list-style: none;
     gap: 30px;
@@ -274,7 +275,7 @@ footer{
 }
 @media (min-width: 485px) {}
 
-@media (max-width: 830px) {
+@media (max-width: 888px) {
     .fa-bars{
         display: unset !important;
     }

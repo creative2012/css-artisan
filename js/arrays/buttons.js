@@ -304,5 +304,30 @@ const buttonsCSS = [
         credit: "Pintura (pqina)"
 
     },
+    {
+      style:`
+      {ID} {
+        background-color: white;
+        border: 1px solid grey;
+        border-radius: 20px;
+        margin-bottom: 10px;
+        width: 150px;
+        height: 40px;
+        max-width: 110px;
+        transition: all 0.2s ease-in !important;
+    
+    
+    }
+    
+    {ID}:hover {
+       
+        color: black !important;
+        font-weight: bold;
+        max-width: 150px;
+        box-shadow: black 0px 6px;
+    }`,
+      credit: "Paul Morris"
+
+  }
     
 ]

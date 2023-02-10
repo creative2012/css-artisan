@@ -163,7 +163,7 @@ function buttonHandler(button) {
     }
     //copy checkbox CSS to user clipboard
     if (button.classList.contains('checkBox')) {
-        copyToClip(button.parentNode.parentNode.parentNode.innerHTML);
+        copyToClip(button.parentNode.parentNode.innerHTML);
         let item = "#copyCB"+ button.dataset.id;
         console.log(item)
         boxAlertCB(item);

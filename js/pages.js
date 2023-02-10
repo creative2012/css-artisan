@@ -62,7 +62,7 @@ function popPageCB(pageContent) {
     pageContent.forEach(function (item, index) {
         
         
-        let innerHTML = `<input type="checkbox"  name="checkbox" checked/>`;
+        let innerHTML = item.html;
         var box = document.createElement('div');
         box.innerHTML = `
         <div id="checkBox-${index + 1}" class="checkBoxWrapper">

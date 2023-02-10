@@ -84,7 +84,8 @@ function popPageCB(pageContent) {
 }
 //just for testing
 function popGeneric(headerText) {
-    container.innerHTML = '';
+    setPage(headerText);
+    container.innerHTML = 'Coming Soon';
     header.innerHTML = headerText;
 
 }

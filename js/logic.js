@@ -66,6 +66,14 @@ function boxAlert(button) {
     }, 1000)
 
 }
+//function to alert copyed to clip CB
+function boxAlertCB(button) {
+    document.querySelector(button).innerHTML = "Copyed!";
+    timeoutID = setTimeout(function () {
+        document.querySelector(button).innerHTML = "Copy";
+    }, 1000)
+
+}
 //function to control active nav itom
 function navController(button, change = true) {
     if (change) button.style.color = 'black';
@@ -102,7 +110,7 @@ function buttonHandler(button) {
     }
     if (button.id == 'checkBoxesLink') {
         navController(button);
-        popGeneric('Check Boxes')
+        popPageCB(checkBoxes);
         if (homeMessageID != null) {
             clearHomeMessage();
         }
@@ -153,6 +161,14 @@ function buttonHandler(button) {
         boxAlert(button);
 
     }
+    //copy checkbox CSS to user clipboard
+    if (button.classList.contains('checkBox')) {
+        copyToClip(button.parentNode.parentNode.parentNode.innerHTML);
+        let item = "#copyCB"+ button.dataset.id;
+        console.log(item)
+        boxAlertCB(item);
+
+    }
     //mobile menu icon
     if (button.id == 'ham' && !hamburger) {
         hamburger = true;
@@ -191,3 +207,4 @@ function scrollFunction() {
 
     }
 }
+

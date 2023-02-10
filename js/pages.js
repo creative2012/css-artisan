@@ -28,31 +28,17 @@ function popPageBS(pageContent) {
         box.appendChild(text);
         box.appendChild(number);
         container.appendChild(box);
-        // var dynamicAfter = document.createElement("style");
-        // dynamicAfter.innerHTML =
-        // `#button${id}::after{
-        //     position:absolute;
-        //     bottom: -20px;
-        //     display: flex;
-        //     justify-content: end;
-        //     color: black; !important
-        //     font-family: 'Poppins', sans-serif;
-        //     font-size: 12px;
-        //     font-style: italic;
-        //     content:'${index+1} - "${item.credit}";`
-        // "}"
-        // document.head.appendChild(dynamicAfter);
         i++;
     });
 
 
 }
-
+//function to show buttons page
 function popPageB(pageContent) {
     setPage('Buttons');
     var i = 1;
     pageContent.forEach(function (item, index) {
-        let innerHTML = `<button class="item" id="button-${index + 1}" role="button"><span>Click to copy</span></button>`;
+        let innerHTML = `<button class="item" id="button-${index + 1}" role="button"><span>Copy CSS</span></button>`;
         var box = document.createElement('div');
         box.innerHTML = `
         <div class="buttonWrapper">
@@ -63,6 +49,33 @@ function popPageB(pageContent) {
         </div>
         <style>
           ${item.style.replace(/{ID}/g, `#button-${index + 1}`)}
+        </style>
+       `
+        container.appendChild(box);
+    });
+
+}
+//function to show check boxes page
+function popPageCB(pageContent) {
+    setPage('CheckBoxes');
+    var i = 1;
+    pageContent.forEach(function (item, index) {
+        
+        
+        let innerHTML = `<input type="checkbox"  name="checkbox" checked/>`;
+        var box = document.createElement('div');
+        box.innerHTML = `
+        <div id="checkBox-${index + 1}" class="checkBoxWrapper">
+
+            ${innerHTML}
+            <div class="copyCB checkBox" data-id="${index + 1}" id="copyCB${index + 1}">Copy</div>
+            <span class="credit">
+                <span>${index + 1} </span>by ${item.credit}
+            </span>
+            
+        </div>
+        <style>
+          ${item.style.replace(/{ID}/g, `#checkBox-${index + 1}`)}
         </style>
        `
         container.appendChild(box);

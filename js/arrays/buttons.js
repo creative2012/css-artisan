@@ -49,6 +49,55 @@ const buttonsCSS = [
 
   },
   {
+    style: `
+    {ID} {
+      background-color: white;
+      border: 1px solid grey;
+      border-radius: 20px;
+      margin-bottom: 10px;
+      width: 150px;
+      height: 40px;
+      max-width: 110px;
+      transition: all 0.2s ease-in !important;
+  
+  
+  }
+  
+  {ID}:hover {
+     
+      color: black !important;
+      font-weight: bold;
+      max-width: 150px;
+      box-shadow: black 0px 6px;
+  }`,
+    credit: "Paul Morris"
+
+  },
+  {
+    style: `
+    {ID}{
+      background-color: white;
+      border: none;
+      box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+      color: #333333;
+      padding: 10px 20px;
+      border-radius: 1.2rem;
+      transition: all 0.2s ease;
+      -webkit-transition: all 0.2s ease;
+      -moz-transition: all 0.2s ease;
+      -ms-transition: all 0.2s ease;
+      -o-transition: all 0.2s ease;
+    }
+    
+    {ID}:hover{
+      background-color: white;
+      color: black;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+    }`,
+    credit: "Paul Morris"
+
+  },
+  {
     style: `{ID}{
             appearance: button;
             backface-visibility: hidden;

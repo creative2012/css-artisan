@@ -8,7 +8,7 @@ const quotes = [
         author:'-CSS Artisan'
     },
     {
-        quote:'Have no fear of perfection -- youll never reach it',
+        quote:'Have no fear of perfection - youll never reach it',
         author:'-Salvador Dali'
     },
     {
@@ -20,7 +20,7 @@ const quotes = [
         author:'-Brian Reed'
     },
     {
-        quote:'You cant use up creativity. ...',
+        quote:'You cant use up creativity...',
         author:'-Maya Angelou'
     },
     {
@@ -31,6 +31,22 @@ const quotes = [
         quote: 'The public is more familiar with bad design than good design.',
         author:'-Paul Rand'
     },
-    
+    {
+        quote: 'Make it simple, but significant.',
+        author:'-Don Draper'
+    },
+    {
+        quote: 'Designers are meant to be loved, not to be understood.',
+        author:'-Margaret Oscar'
+    },
+    {
+        quote: 'Styles come and go. Good design is a language, not a style.',
+        author:'-Massimo Vignelli'
+    },
+    {
+        quote: 'Design is as much an act of spacing as an act of marking.',
+        author:'-Ellen Lupton'
+    },
+
 
 ]

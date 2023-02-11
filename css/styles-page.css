@@ -108,7 +108,13 @@ main {
     align-items: center;
  
 }
-
+#version{
+    color: black;
+    position: absolute;
+    right:20px;
+    bottom:1px;
+    font-size: 12px;
+}
 ::-webkit-scrollbar {
     width: 12px;
 }

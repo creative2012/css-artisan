@@ -1,4 +1,162 @@
+
+
 const checkBoxes = [
+    {
+        html: `
+        <div class="container">
+        <div class="checkboxes">
+          <div class="check">
+            <input id="check" type="checkbox"/>
+            <label id="label1" for="check">
+              <div class="box"><i class="fa fa-check"></i></div>
+            </label>
+          </div>
+        </div>
+    </div>`,
+        style: `
+        /* Custom Code Here */
+        {ID} .container {
+        max-width: 400px;
+        color:white;
+        }
+        {ID} .container .checkboxes {
+        display: flex;
+        justify-content: center;
+        
+        }
+        {ID} .container .checkboxes + p {
+        text-align: center;
+        }
+        {ID} .container .check input {
+        display: none;
+        }
+        {ID} .container .check input:checked + #label1 .box {
+        -webkit-animation: animOnTransform 1s 1 forwards;
+                animation: animOnTransform 1s 1 forwards;
+        background: rgba(0, 0, 0, 0.5);
+        }
+        {ID} .container .check input:checked +  #label1 .box i {
+        transform: translate(-50%, -50%) scale(1);
+        transition-duration: 200ms;
+        transition-delay: 400ms;
+        opacity: 1;
+        }
+        {ID} .container .check #label1 {
+        min-width: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        min-height: 60px;
+        cursor: pointer;
+        }
+        {ID} .container .check #label1 .box {
+        background: rgba(0, 0, 0, 0.3);
+        border-radius: 5px;
+        position: relative;
+        width: 50px;
+        height: 50px;
+        transition: background 300ms ease;
+        }
+        {ID} .container .check #label1 .box:hover {
+        background: rgba(0, 0, 0, 0.5);
+        }
+        {ID} .container .check #label1 .box i {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: 20px;
+        display: inline-block;
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.2s ease-in-out;
+        transition-delay: 200ms;
+        transform: translate(-50%, -50%) scale(4);
+        }
+
+        @-webkit-keyframes animOn {
+        40% {
+            height: 20px;
+            width: 100px;
+        }
+        50% {
+            height: 60px;
+            width: 30px;
+        }
+        60% {
+            height: 40px;
+            width: 70px;
+        }
+        70% {
+            height: 55px;
+            width: 45px;
+        }
+        100% {
+            height: 50px;
+            width: 50px;
+        }
+        }
+
+        @keyframes animOn {
+        40% {
+            height: 20px;
+            width: 100px;
+        }
+        50% {
+            height: 60px;
+            width: 30px;
+        }
+        60% {
+            height: 40px;
+            width: 70px;
+        }
+        70% {
+            height: 55px;
+            width: 45px;
+        }
+        100% {
+            height: 50px;
+            width: 50px;
+        }
+        }
+        @-webkit-keyframes animOnTransform {
+        40% {
+            transform: scale(1.5, 0.5);
+        }
+        50% {
+            transform: scale(0.5, 1.5);
+        }
+        60% {
+            transform: scale(1.3, 0.6);
+        }
+        70% {
+            transform: scale(0.8, 1.2);
+        }
+        100% {
+            transform: scale(1, 1);
+        }
+        }
+        @keyframes animOnTransform {
+        40% {
+            transform: scale(1.5, 0.5);
+        }
+        50% {
+            transform: scale(0.5, 1.5);
+        }
+        60% {
+            transform: scale(1.3, 0.6);
+        }
+        70% {
+            transform: scale(0.8, 1.2);
+        }
+        100% {
+            transform: scale(1, 1);
+        }
+        }
+        /* end of custom code */
+        `,
+        credit: "Branko Stancevic"
+    },
     {
         html: `<input type="checkbox"  name="checkbox" checked/>`,
         style: `
@@ -151,8 +309,8 @@ const checkBoxes = [
         html: `
         <form>
       <div>
-        <input type="checkbox" id="check" name="check" value="" />
-        <label for="check">
+        <input type="checkbox" id="check2" name="check2" value="" />
+        <label for="check2">
           <span><!-- This span is needed to create the "checkbox" element --></span>Checkbox
         </label>
       </div>

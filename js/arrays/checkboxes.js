@@ -3,16 +3,64 @@
 const checkBoxes = [
     {
         html: `
+        <input type="checkbox" id="switch22" /><label for="switch22">Toggle</label>`,
+        style: `
+        {ID} input[type=checkbox]{
+            height: 0;
+            width: 0;
+            visibility: hidden;
+        }
+        
+        {ID} label {
+            cursor: pointer;
+            text-indent: -9999px;
+            width: 50px;
+            height: 30px;
+            background: grey;
+            display: block;
+            border-radius: 50px;
+            position: relative;
+        }
+        
+        {ID} label:after {
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border-radius: 40px;
+            transition: 0.3s;
+        }
+        
+        {ID} input:checked + label {
+            background: #bada55;
+        }
+        
+        {ID} input:checked + label:after {
+            left: calc(100% - 5px);
+            transform: translateX(-100%);
+        }
+        
+        {ID} label:active:after {
+            width: 30px;
+        }
+        `,
+        credit: "Markus Burnette"
+    },
+    {
+        html: `
         <div class="container">
-        <div class="checkboxes">
-          <div class="check">
-            <input id="check" type="checkbox"/>
-            <label id="label1" for="check">
-              <div class="box"><i class="fa fa-check"></i></div>
-            </label>
-          </div>
-        </div>
-    </div>`,
+            <div class="checkboxes">
+            <div class="check">
+                <input id="check" type="checkbox"/>
+                <label id="label1" for="check">
+                <div class="box"><i class="fa fa-check"></i></div>
+                </label>
+            </div>
+            </div>
+        </div>`,
         style: `
         /* Custom Code Here */
         {ID} .container {
@@ -96,47 +144,7 @@ const checkBoxes = [
             width: 50px;
         }
         }
-
-        @keyframes animOn {
-        40% {
-            height: 20px;
-            width: 100px;
-        }
-        50% {
-            height: 60px;
-            width: 30px;
-        }
-        60% {
-            height: 40px;
-            width: 70px;
-        }
-        70% {
-            height: 55px;
-            width: 45px;
-        }
-        100% {
-            height: 50px;
-            width: 50px;
-        }
-        }
         @-webkit-keyframes animOnTransform {
-        40% {
-            transform: scale(1.5, 0.5);
-        }
-        50% {
-            transform: scale(0.5, 1.5);
-        }
-        60% {
-            transform: scale(1.3, 0.6);
-        }
-        70% {
-            transform: scale(0.8, 1.2);
-        }
-        100% {
-            transform: scale(1, 1);
-        }
-        }
-        @keyframes animOnTransform {
         40% {
             transform: scale(1.5, 0.5);
         }

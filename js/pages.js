@@ -1,7 +1,7 @@
 const header = document.querySelector('#section-header');
 const container = document.querySelector('#main-container');
 //function to show homepage
-function popHomepage() {
+const popHomepage = () => {
 
     container.innerHTML = '';
     header.innerHTML = '';
@@ -11,13 +11,13 @@ function popHomepage() {
 
 }
 //Function to show box shadows page
-function popPageBS(pageContent) {
+const popPageBS = (pageContent) => {
     setPage('Box Shadows');
-    var i = 1;
-    pageContent.forEach(function (style) {
-        var box = document.createElement('div');
-        var text = document.createElement('span')
-        var number = document.createElement('div');
+    let i = 1;
+    pageContent.forEach(style => {
+        let box = document.createElement('div');
+        let text = document.createElement('span')
+        let number = document.createElement('div');
 
         box.classList.add('shadow-box');
         box.setAttribute('style', style);
@@ -34,12 +34,11 @@ function popPageBS(pageContent) {
 
 }
 //function to show buttons page
-function popPageB(pageContent) {
+const popPageB = (pageContent) => {
     setPage('Buttons');
-    var i = 1;
-    pageContent.forEach(function (item, index) {
+    pageContent.forEach((item, index) => {
         let innerHTML = `<button class="item" id="button-${index + 1}" role="button"><span>Copy CSS</span></button>`;
-        var box = document.createElement('div');
+        let box = document.createElement('div');
         box.innerHTML = `
         <div class="buttonWrapper">
             ${innerHTML}
@@ -56,14 +55,13 @@ function popPageB(pageContent) {
 
 }
 //function to show check boxes page
-function popPageCB(pageContent) {
+const popPageCB =(pageContent) => {
     setPage('CheckBoxes');
-    var i = 1;
-    pageContent.forEach(function (item, index) {
+    pageContent.forEach((item, index) => {
         
         
         let innerHTML = item.html;
-        var box = document.createElement('div');
+        let box = document.createElement('div');
         box.innerHTML = `
         <div id="checkBox-${index + 1}" class="checkBoxWrapper">
 
@@ -83,13 +81,13 @@ function popPageCB(pageContent) {
 
 }
 //just for testing
-function popGeneric(headerText) {
+const popGeneric = (headerText) => {
     setPage(headerText);
     container.innerHTML = 'Coming Soon';
     header.innerHTML = headerText;
 
 }
-function setPage(title) {
+const setPage = (title) => {
     pageContainer.scrollTo(0, 0);
     container.innerHTML = '';
     header.removeAttribute('class', 'home');
@@ -97,9 +95,9 @@ function setPage(title) {
     header.textContent = title;
 
 }
-function addStyleTag(css) {
+const addStyleTag = (css) => {
     head = document.head || document.getElementsByTagName('head')[0],
-        style = document.createElement('style');
+    style = document.createElement('style');
     head.appendChild(style);
     style.type = 'text/css';
     if (style.styleSheet) {

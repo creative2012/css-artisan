@@ -1,18 +1,18 @@
 const pageContainer = document.querySelector('main');
 const bigMac = document.querySelector('#hamburgerWrapper');
-var timeoutID = null;
-var hamburger = false;
-var homeMessageID = null;
-var lastQuote = '-CSS Artisan';
+let timeoutID = null;
+let hamburger = false;
+let homeMessageID = null;
+let lastQuote = '-CSS Artisan';
 const messagesLength = quotes.length;
 
 //function to change home page message
-function homeMessage() {
+const homeMessage = () => {
     if (homeMessageID != null) {
         clearHomeMessage();
     }
 
-    var dynamicAfter = document.createElement("style");
+    const dynamicAfter = document.createElement("style");
     dynamicAfter.innerHTML =
         ".message::after{" +
         "display: flex;" +
@@ -24,9 +24,9 @@ function homeMessage() {
         "}"
     document.head.appendChild(dynamicAfter);
 
-    var last = 0;
-    var rand = 0;
-    homeMessageID = setInterval(function () {
+    let last = 0;
+    let rand = 0;
+    homeMessageID = setInterval( () => {
         while (true) {
             rand = Math.floor(Math.random() * messagesLength);
             if (rand != last) break;
@@ -35,7 +35,7 @@ function homeMessage() {
         let message = quotes[rand];
         let container = document.querySelector('.message');
         container.setAttribute('style', 'opacity: 0 ');
-        setTimeout(function () {
+        setTimeout( () => {
             dynamicAfter.innerHTML = dynamicAfter.innerHTML.replace(lastQuote, message.author);
             lastQuote = message.author;
             container.innerHTML = message.quote;
@@ -44,14 +44,14 @@ function homeMessage() {
     }, 5000);
 
 }
-function clearHomeMessage() {
+const clearHomeMessage = () => {
     clearInterval(homeMessageID);
     homeMessageID = null;
 
 }
 
 //Function to copy to clipboard
-function copyToClip(text) {
+const copyToClip = (text) => {
 
     // write to clipboard
     navigator.clipboard.writeText(text);
@@ -59,26 +59,26 @@ function copyToClip(text) {
 }
 
 //function to alert copyed to clip
-function boxAlert(button) {
+const boxAlert = (button) => {
     button.firstChild.textContent = "Copyed to clip!";
-    timeoutID = setTimeout(function () {
+    timeoutID = setTimeout( () => {
         button.firstChild.textContent = "Copy CSS";
     }, 1000)
 
 }
 //function to alert copyed to clip CB
-function boxAlertCB(button) {
+const boxAlertCB = (button) => {
     document.querySelector(button).innerHTML = "Copyed!";
-    timeoutID = setTimeout(function () {
+    timeoutID = setTimeout( () => {
         document.querySelector(button).innerHTML = "Copy";
     }, 1000)
 
 }
 //function to control active nav itom
-function navController(button, change = true) {
+const navController = (button, change = true) => {
     if (change) button.style.color = 'black';
 
-    var inactive = document.querySelector('.active');
+    let inactive = document.querySelector('.active');
     inactive.classList.remove('active');
 
     if (inactive.id != 'nav-title') inactive.style.color = 'lightslategrey';
@@ -86,13 +86,13 @@ function navController(button, change = true) {
 
 }
 //close hamburger menu
-function isHamburger() {
+const isHamburger = () => {
     hamburger = false;
     bigMac.removeAttribute('style', 'max-height');
 
 }
 //function to handle button clicks
-function buttonHandler(button) {
+const buttonHandler = (button) =>{
 
     if (button.id == 'nav-title') {
         navController(button, false);
@@ -191,14 +191,14 @@ homeMessage();
 
 //page click listener
 const navContainer = document.querySelector('body');
-navContainer.addEventListener('click', function (e) {
+navContainer.addEventListener('click', (e) => {
     buttonHandler(e.target);
 
 });
 
-document.querySelector('main').onscroll = function () { scrollFunction() };
+document.querySelector('main').onscroll = () => { scrollFunction() };
 
-function scrollFunction() {
+const scrollFunction = () => {
     if (document.querySelector('main').scrollTop > 10) {
         document.querySelector('footer').style.bottom = "-70px";
 

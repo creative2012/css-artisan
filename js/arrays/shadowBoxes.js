@@ -1,4 +1,5 @@
 const shadowBoxes = [
+    'box-shadow: rgb(45 45 45 / 20%) 0px 0.125rem 0.25rem inset, rgb(45 45 45 / 12%) 0px 0.0625rem 0.1875rem inset, rgb(45 45 45 / 20%) 0px 0px 0.125rem inset;',
     'box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;',
     'box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;',
     'box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;',
